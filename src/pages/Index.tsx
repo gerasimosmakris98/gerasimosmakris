@@ -12,6 +12,24 @@ import ParticleBackground from '@/components/ParticleBackground';
 const Index = () => {
   useEffect(() => {
     document.title = 'Gerasimos Makris | Web Designer & Social Media Manager';
+    
+    // Smooth scroll to sections when hash changes
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const section = document.querySelector(hash);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
   
   return (

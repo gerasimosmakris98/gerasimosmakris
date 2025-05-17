@@ -4,6 +4,13 @@ import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
       <div className="section-container flex flex-col items-center text-center">
@@ -18,10 +25,19 @@ const HeroSection = () => {
           Creating visually stunning web experiences and managing impactful social media campaigns from Madrid, Spain.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
-          <Button size="lg" className="glass-panel bg-white/10 hover:bg-white/20">
+          <Button 
+            size="lg" 
+            className="glass-panel bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+            onClick={() => scrollToSection('skills')}
+          >
             View My Work
           </Button>
-          <Button size="lg" variant="outline" className="backdrop-blur-md border-white/20 hover:bg-white/10">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="backdrop-blur-md border-white/20 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+            onClick={() => scrollToSection('contact')}
+          >
             Get in Touch
           </Button>
         </div>

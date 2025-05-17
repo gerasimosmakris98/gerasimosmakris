@@ -12,7 +12,7 @@ const AboutSection = () => {
             <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-highlight-purple/20 to-highlight-blue/20 z-0"></div>
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                src="/placeholder.svg" 
                 alt="Gerasimos Makris"
                 className="object-cover w-full h-full z-10 mix-blend-luminosity opacity-80"
               />
@@ -42,19 +42,22 @@ const AboutSection = () => {
               <p>
                 My approach combines technical precision with artistic vision, resulting in designs that not only look beautiful but also drive engagement and achieve business goals.
               </p>
+              <p>
+                With expertise in both design and social media strategy, I help brands establish a cohesive online presence that resonates with their target audience.
+              </p>
             </div>
             
-            <Button className="bg-highlight-purple hover:bg-highlight-purple/90 mb-8 flex items-center gap-2">
+            <Button className="bg-highlight-purple hover:bg-highlight-purple/90 mb-8 flex items-center gap-2 transition-all duration-300 hover:scale-105">
               <FileText size={18} />
               Download CV
             </Button>
             
             <div className="grid grid-cols-2 gap-6">
-              <div>
+              <div className="glass-panel p-4 rounded-lg transition-transform hover:translate-y-[-5px] duration-300">
                 <h3 className="text-3xl font-bold mb-2 text-gradient">5+</h3>
                 <p className="text-gray-400">Years of Experience</p>
               </div>
-              <div>
+              <div className="glass-panel p-4 rounded-lg transition-transform hover:translate-y-[-5px] duration-300">
                 <h3 className="text-3xl font-bold mb-2 text-gradient">50+</h3>
                 <p className="text-gray-400">Projects Completed</p>
               </div>
