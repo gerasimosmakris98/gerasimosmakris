@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, Instagram, Github, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram, Github, Twitter, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -15,10 +15,11 @@ const ContactSection = () => {
   };
 
   const socialLinks = [
-    { icon: <Linkedin className="w-5 h-5" />, label: "LinkedIn", href: "https://linkedin.com" },
-    { icon: <Instagram className="w-5 h-5" />, label: "Instagram", href: "https://instagram.com" },
-    { icon: <Github className="w-5 h-5" />, label: "GitHub", href: "https://github.com" },
-    { icon: <Twitter className="w-5 h-5" />, label: "X (Twitter)", href: "https://twitter.com" },
+    { icon: <Linkedin className="w-5 h-5" />, label: "LinkedIn", href: "https://linkedin.com/in/gerasimosmakris/" },
+    { icon: <Instagram className="w-5 h-5" />, label: "Instagram", href: "https://instagram.com/gerasimos.makris/" },
+    { icon: <Github className="w-5 h-5" />, label: "GitHub", href: "https://github.com/gerasimosmakris98" },
+    { icon: <Twitter className="w-5 h-5" />, label: "X (Twitter)", href: "https://x.com/gerasimos_m1998/" },
+    { icon: <Facebook className="w-5 h-5" />, label: "Facebook", href: "https://www.facebook.com/makris.gerasimos/" },
   ];
 
   return (
@@ -51,7 +52,7 @@ const ContactSection = () => {
                   <Mail className="w-5 h-5 mr-4 text-highlight-blue" />
                   <div>
                     <p className="text-sm text-gray-400 mb-1">Email</p>
-                    <p className="font-medium">gerasimos@example.com</p>
+                    <p className="font-medium">j.makris98@gmailm.com</p>
                   </div>
                 </div>
                 
