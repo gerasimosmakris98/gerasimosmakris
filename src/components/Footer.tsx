@@ -32,7 +32,7 @@ const Footer = () => {
                className="transform transition-all duration-300 hover:scale-125">
               <Facebook className="h-5 w-5 text-gray-400 hover:text-highlight-blue transition-colors" />
             </a>
-            <a href="mailto:j.makris98@gmailm.com" target="_blank" rel="noopener noreferrer" aria-label="Email"
+            <a href="mailto:j.makris98@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"
                className="transform transition-all duration-300 hover:scale-125">
               <Mail className="h-5 w-5 text-gray-400 hover:text-highlight-purple transition-colors" />
             </a>
@@ -40,15 +40,9 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+          <p className="text-gray-400 text-sm">
             &copy; {currentYear} Gerasimos Makris. All rights reserved.
           </p>
-          
-          <div className="flex flex-wrap justify-center space-x-4 text-sm text-gray-400">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
-          </div>
         </div>
       </div>
     </footer>
