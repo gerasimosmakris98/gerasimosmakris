@@ -23,7 +23,7 @@ const ContactSection = () => {
             Let's <span className="text-gradient">Connect</span>
           </h2>
           <p className="text-gray-300">
-            Have a project in mind or want to discuss how we can work together? Feel free to reach out to me through any of these channels.
+            Ready to elevate your web presence and social media strategy? Let's discuss how we can work together to achieve your goals.
           </p>
         </div>
         
