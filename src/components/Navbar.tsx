@@ -21,7 +21,9 @@ const Navbar = () => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
+    { name: 'Services', href: '#services' },
+    { name: 'Portfolio', href: '#portfolio' }, // Renamed from Projects and new href
+    { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -35,7 +37,7 @@ const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between">
-        <a href="#" className="text-xl font-bold text-gradient">GM</a>
+        <a href="#home" className="text-xl font-bold text-gradient">GM</a>
         
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-8">
@@ -54,15 +56,20 @@ const Navbar = () => {
         <button 
           className="md:hidden text-gray-300 hover:text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       
       {/* Mobile Menu */}
-      <div className={cn(
-        "fixed inset-x-0 top-[72px] bg-black/95 backdrop-blur-md transition-transform duration-300 md:hidden",
-        mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+      <div 
+        id="mobile-menu"
+        className={cn(
+          "fixed inset-x-0 top-[72px] bg-black/95 backdrop-blur-md transition-transform duration-300 md:hidden",
+          mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
       )}>
         <div className="container py-4 flex flex-col space-y-4">
           {navItems.map((item) => (

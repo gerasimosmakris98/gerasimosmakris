@@ -28,7 +28,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="glass-panel bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-105"
-            onClick={() => scrollToSection('skills')}
+            onClick={() => scrollToSection('portfolio')}
           >
             View My Work
           </Button>
