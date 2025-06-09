@@ -14,7 +14,34 @@ import ParticleBackground from '@/components/ParticleBackground';
 
 const Index = () => {
   useEffect(() => {
-    document.title = 'Gerasimos Makris | Web Designer & Social Media Manager';
+    // Enhanced SEO title
+    document.title = 'Gerasimos Makris | Professional Web Designer & Social Media Manager in Madrid';
+    
+    // Add structured data for SEO
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gerasimos Makris",
+      "jobTitle": "Web Designer & Social Media Manager",
+      "description": "Professional web designer and social media manager specializing in modern web design, UI/UX, and strategic social media campaigns.",
+      "url": "https://gerasimosmakris.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Madrid",
+        "addressCountry": "Spain"
+      },
+      "sameAs": [
+        "https://twitter.com/gerasimos_makris",
+        "https://linkedin.com/in/gerasimos-makris",
+        "https://instagram.com/gerasimos_makris"
+      ]
+    };
+
+    // Add structured data to head
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
     
     // Smooth scroll to sections when hash changes
     const handleHashChange = () => {
@@ -32,6 +59,11 @@ const Index = () => {
     
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
+      // Clean up structured data script
+      const existingScript = document.querySelector('script[type="application/ld+json"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
     };
   }, []);
   
