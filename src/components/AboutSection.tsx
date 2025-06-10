@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { FileText, MapPin, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { MapPin, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const AboutSection = () => {
@@ -79,14 +78,6 @@ const AboutSection = () => {
           }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
-        <motion.div
-          className="absolute top-1/2 left-1/2 w-64 h-64 rounded-full bg-gradient-to-br from-highlight-blue/5 via-highlight-purple/5 to-highlight-pink/5 blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            rotate: [0, -90, 0]
-          }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        />
       </div>
 
       <div className="section-container">
@@ -98,48 +89,47 @@ const AboutSection = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.div 
-            className="lg:w-1/2"
+            className="lg:w-1/2 flex justify-center"
             variants={imageVariants}
           >
-            <div className="relative w-full max-w-md mx-auto aspect-[4/5] rounded-3xl overflow-hidden group perspective-1000">
-              {/* Enhanced glass background with multiple layers */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-white/5 backdrop-blur-2xl z-0"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-highlight-purple/20 via-highlight-blue/15 to-highlight-pink/20 z-10"></div>
+            <div className="relative w-80 h-80 rounded-3xl overflow-hidden group perspective-1000">
+              {/* Glass background layers */}
+              <div className="absolute inset-0 glass-panel-strong z-0"></div>
               
               {/* Main image */}
               <img 
-                src="/lovable-uploads/4be2e524-8b85-433f-9e31-b1166bd5f7b8.png" 
+                src="/lovable-uploads/61c2a79f-1047-40f7-8a62-ebd7c7bd7fba.png" 
                 alt="Gerasimos Makris - Professional Web Designer & Social Media Manager"
-                className="object-cover object-center w-full h-full z-20 relative mix-blend-luminosity opacity-90 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
+                className="object-cover object-center w-full h-full z-20 relative transition-all duration-700 group-hover:scale-105"
               />
               
-              {/* Enhanced overlay with better gradients */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-dark-200/95 via-dark-200/70 to-transparent backdrop-blur-xl z-30">
+              {/* Location overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-dark-200/95 via-dark-200/70 to-transparent backdrop-blur-xl z-30">
                 <motion.div 
-                  className="flex items-center gap-3 text-gray-100 mb-3"
+                  className="flex items-center gap-3 text-gray-100 mb-2"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
                   <div className="p-2 rounded-lg glass-panel-strong">
-                    <MapPin size={20} className="text-highlight-blue" />
+                    <MapPin size={16} className="text-highlight-blue" />
                   </div>
-                  <span className="font-modern font-medium">Madrid, Spain</span>
+                  <span className="font-modern font-medium text-sm">Madrid, Spain</span>
                 </motion.div>
                 <motion.p 
-                  className="text-sm text-gray-300 font-modern flex items-center gap-2"
+                  className="text-xs text-gray-300 font-modern flex items-center gap-2"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                  <span className="w-2 h-2 rounded-full bg-highlight-pink"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-highlight-pink"></span>
                   Originally from Athens, Greece
                 </motion.p>
               </div>
               
-              {/* Enhanced floating sparkles */}
+              {/* Floating sparkle */}
               <motion.div
-                className="absolute top-6 right-6 p-3 glass-panel-strong rounded-full"
+                className="absolute top-4 right-4 p-2 glass-panel-strong rounded-full"
                 animate={{ 
                   rotate: [0, 360], 
                   scale: [1, 1.2, 1],
@@ -147,30 +137,43 @@ const AboutSection = () => {
                 }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               >
-                <Sparkles size={24} className="text-highlight-yellow" />
+                <Sparkles size={16} className="text-highlight-yellow" />
               </motion.div>
-
-              {/* Animated border */}
-              <div className="absolute inset-0 rounded-3xl border border-white/20 group-hover:border-white/40 transition-all duration-500 z-40"></div>
             </div>
           </motion.div>
           
           <motion.div className="lg:w-1/2" variants={itemVariants}>
-            <motion.span 
-              className="inline-flex items-center gap-2 uppercase tracking-widest text-gray-400 text-sm mb-4 font-modern"
+            <motion.div 
+              className="flex items-center justify-center lg:justify-start gap-4 mb-8"
               variants={itemVariants}
             >
-              <div className="w-8 h-px bg-gradient-to-r from-highlight-blue to-highlight-purple"></div>
-              About Me
-              <div className="w-8 h-px bg-gradient-to-r from-highlight-purple to-highlight-pink"></div>
-            </motion.span>
-            
-            <motion.h2 
-              className="heading-lg mb-8"
-              variants={itemVariants}
-            >
-              Bridging Design & <span className="text-gradient-elegant">Social Strategy</span>
-            </motion.h2>
+              <motion.div
+                className="flex items-center gap-2"
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              >
+                <Sparkles className="text-highlight-blue" size={20} />
+                <Sparkles className="text-highlight-purple" size={16} />
+                <Sparkles className="text-highlight-pink" size={18} />
+              </motion.div>
+              
+              <motion.h2 
+                className="heading-lg text-center lg:text-left"
+                variants={itemVariants}
+              >
+                About <span className="text-gradient-elegant">Me</span>
+              </motion.h2>
+              
+              <motion.div
+                className="flex items-center gap-2"
+                animate={{ rotate: [360, 0] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              >
+                <Sparkles className="text-highlight-pink" size={18} />
+                <Sparkles className="text-highlight-purple" size={16} />
+                <Sparkles className="text-highlight-blue" size={20} />
+              </motion.div>
+            </motion.div>
             
             <motion.div 
               className="space-y-6 text-gray-200 mb-10 font-modern leading-relaxed"
@@ -188,14 +191,6 @@ const AboutSection = () => {
               <p>
                 With expertise in both design and social media strategy, I help brands establish a cohesive online presence that resonates with their target audience.
               </p>
-            </motion.div>
-            
-            <motion.div variants={itemVariants}>
-              <Button className="btn-primary mb-10 flex items-center gap-3 text-lg px-8 py-4 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-highlight-blue/30 to-highlight-purple/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <FileText size={20} className="group-hover:rotate-12 transition-transform duration-300 relative z-10" />
-                <span className="relative z-10">Download CV</span>
-              </Button>
             </motion.div>
             
             <motion.div 
