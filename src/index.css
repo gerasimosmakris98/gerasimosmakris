@@ -3,8 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono&display=swap');
-
 @layer base {
   :root {
     --background: 240 10% 3.9%;
@@ -40,16 +38,32 @@
   body {
     @apply bg-dark-200 text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    font-family: 'Inter', sans-serif;
   }
 }
 
 @layer components {
   .glass-panel {
-    @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl shadow-lg;
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl shadow-2xl;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-panel-strong {
+    @apply backdrop-blur-2xl bg-white/10 border border-white/20 rounded-xl shadow-2xl;
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
   }
   
   .text-gradient {
     @apply bg-gradient-to-br from-highlight-blue via-highlight-purple to-highlight-pink bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-elegant {
+    @apply bg-gradient-to-br from-white via-highlight-blue to-highlight-purple bg-clip-text text-transparent;
   }
   
   .section-container {
@@ -58,18 +72,46 @@
   
   .heading-xl {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+    font-family: 'Playfair Display', serif;
   }
   
   .heading-lg {
     @apply text-3xl md:text-4xl font-bold;
+    font-family: 'Playfair Display', serif;
   }
   
   .heading-md {
     @apply text-2xl md:text-3xl font-semibold;
+    font-family: 'Playfair Display', serif;
   }
   
   .heading-sm {
     @apply text-xl md:text-2xl font-medium;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .btn-primary {
+    @apply backdrop-blur-xl bg-gradient-to-r from-highlight-blue/20 to-highlight-purple/20 
+           border border-white/30 text-white font-semibold px-6 py-3 rounded-xl 
+           hover:from-highlight-blue/30 hover:to-highlight-purple/30 
+           hover:border-white/40 hover:shadow-lg hover:shadow-highlight-purple/25
+           transition-all duration-300 hover:scale-105;
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-secondary {
+    @apply backdrop-blur-xl bg-white/5 border border-white/20 text-white font-semibold px-6 py-3 rounded-xl 
+           hover:bg-white/10 hover:border-white/30 hover:shadow-lg
+           transition-all duration-300 hover:scale-105;
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .floating-element {
+    @apply animate-float;
   }
 }
 
@@ -85,18 +127,48 @@
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #121212;
+  background: rgba(18, 18, 18, 0.5);
+  backdrop-filter: blur(10px);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: linear-gradient(to bottom, #60A5FA, #A78BFA);
   border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: linear-gradient(to bottom, #3B82F6, #8B5CF6);
+}
+
+/* Enhanced animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(1deg); }
+  50% { transform: translateY(-5px) rotate(-1deg); }
+  75% { transform: translateY(-15px) rotate(0.5deg); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(96, 165, 250, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(167, 139, 250, 0.5); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
 }

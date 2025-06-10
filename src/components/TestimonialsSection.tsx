@@ -1,72 +1,139 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Quote } from 'lucide-react';
-
-const testimonials = [
-  {
-    name: "Maria Garcia",
-    company: "Vibrant Fashion",
-    role: "Marketing Director",
-    content: "Gerasimos transformed our online presence completely! His web design skills combined with social media expertise delivered incredible results. Our engagement increased by 80% within just two months.",
-    image: "/testimonial1.jpg"
-  },
-  {
-    name: "Alex Johnson",
-    company: "Tech Innovate",
-    role: "CEO",
-    content: "Working with Gerasimos was the best decision for our rebrand. His attention to design details and strategic social media approach helped us connect with our audience in ways we never thought possible.",
-    image: "/testimonial2.jpg"
-  },
-  {
-    name: "Sofia Martinez",
-    company: "Culinary Delights",
-    role: "Owner",
-    content: "As a restaurant owner, I needed someone who understood both visual appeal and engagement. Gerasimos delivered a stunning website and managed our social media with creativity that truly captured our brand's essence.",
-    image: "/testimonial3.jpg"
-  }
-];
+import { Quote, Star, Plus } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const TestimonialsSection = () => {
+  const [showAddReview, setShowAddReview] = useState(false);
+
   return (
     <section id="testimonials" className="py-24 bg-dark-300">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="uppercase tracking-widest text-gray-400 text-sm mb-3 block">
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="uppercase tracking-widest text-gray-400 text-sm mb-3 block font-modern"
+          >
             Client Feedback
-          </span>
-          <h2 className="heading-lg mb-6">
+          </motion.span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="heading-lg mb-6"
+          >
             What My <span className="text-gradient">Clients</span> Say
-          </h2>
-          <p className="text-gray-300">
-            Don't just take my word for it. Here's what clients say about working with me on their web design and social media projects.
-          </p>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-gray-300"
+          >
+            Building trust through exceptional work and client satisfaction.
+          </motion.p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="glass-panel p-6 flex flex-col h-full"
-            >
-              <Quote className="text-highlight-purple w-10 h-10 mb-4 opacity-50" />
-              <p className="text-gray-200 italic mb-6 flex-grow">"{testimonial.content}"</p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-highlight-blue to-highlight-purple flex items-center justify-center text-white font-bold">
-                  {testimonial.name.charAt(0)}
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-medium text-white">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-400">{testimonial.role}, {testimonial.company}</p>
-                </div>
+        <div className="flex flex-col items-center justify-center min-h-[400px]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="glass-panel-strong p-12 text-center max-w-2xl"
+          >
+            <div className="w-20 h-20 bg-gradient-to-r from-highlight-blue/20 to-highlight-purple/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Quote className="w-10 h-10 text-highlight-purple" />
+            </div>
+            
+            <h3 className="heading-md mb-4">Your Review Could Be Here</h3>
+            <p className="text-gray-300 mb-8 leading-relaxed">
+              I'm building my portfolio and would love to work with you! If you've worked with me or are interested in a project, 
+              I'd appreciate your feedback to help showcase my work to future clients.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button 
+                  onClick={() => setShowAddReview(true)}
+                  className="btn-primary group"
+                >
+                  <Plus className="w-5 h-5 mr-2 group-hover:rotate-90 transition-transform duration-300" />
+                  Add Your Review
+                </Button>
+              </motion.div>
+              
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="btn-secondary"
+                >
+                  Start a Project
+                </Button>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Future testimonials will appear here */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <div className="flex items-center justify-center gap-2 text-gray-400">
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-highlight-yellow text-highlight-yellow" />
+                ))}
               </div>
-            </motion.div>
-          ))}
+              <span className="text-sm">Ready to earn your 5-star review</span>
+            </div>
+          </motion.div>
         </div>
+
+        {showAddReview && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50"
+            onClick={() => setShowAddReview(false)}
+          >
+            <div 
+              className="glass-panel-strong p-8 max-w-md w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 className="heading-md mb-4">Share Your Experience</h3>
+              <p className="text-gray-300 mb-6">
+                Thank you for considering leaving a review! Please reach out via the contact form to share your experience working with me.
+              </p>
+              <div className="flex gap-3">
+                <Button 
+                  onClick={() => {
+                    setShowAddReview(false);
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="btn-primary flex-1"
+                >
+                  Go to Contact
+                </Button>
+                <Button 
+                  onClick={() => setShowAddReview(false)}
+                  className="btn-secondary"
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );
