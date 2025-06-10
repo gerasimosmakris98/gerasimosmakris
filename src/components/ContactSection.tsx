@@ -14,7 +14,7 @@ const ContactSection = () => {
   ];
 
   const contactInfo = [
-    { icon: <Mail className="w-6 h-6 text-highlight-blue" />, label: "Email", value: "j.makris98@gmail.com", type: "email" },
+    { icon: <Mail className="w-6 h-6 text-highlight-blue" />, label: "Email", value: "contact@gerasimosmakris.com", type: "email" },
     { icon: <Phone className="w-6 h-6 text-highlight-purple" />, label: "Phone", value: "+34 657 20 59 54", type: "phone" },
     { icon: <MapPin className="w-6 h-6 text-highlight-pink" />, label: "Location", value: "Madrid, Spain", type: "location" },
   ];
