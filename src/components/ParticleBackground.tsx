@@ -18,58 +18,58 @@ const ParticleBackground = () => {
           enable: true,
           zIndex: -1
         },
-        fpsLimit: 60,
+        fpsLimit: 120,
         particles: {
           number: {
-            value: 80,
+            value: 120,
             density: {
               enable: true,
-              value_area: 800
+              value_area: 1000
             }
           },
           color: {
-            value: "#ffffff"
+            value: ["#60A5FA", "#A78BFA", "#F472B6", "#FCD34D"]
           },
           shape: {
             type: "circle",
           },
           opacity: {
-            value: 0.1,
+            value: 0.15,
             random: true,
             anim: {
               enable: true,
-              speed: 1,
+              speed: 2,
               opacity_min: 0.05,
               sync: false
             }
           },
           size: {
-            value: 2,
+            value: 3,
             random: true,
             anim: {
-              enable: false,
-              speed: 40,
-              size_min: 0.1,
+              enable: true,
+              speed: 2,
+              size_min: 0.5,
               sync: false
             }
           },
           line_linked: {
             enable: true,
-            distance: 150,
+            distance: 180,
             color: "#ffffff",
-            opacity: 0.1,
-            width: 1
+            opacity: 0.15,
+            width: 1.5
           },
           move: {
             enable: true,
-            speed: 0.3,
+            speed: 0.8,
             direction: "none",
-            random: false,
+            random: true,
             straight: false,
             out_mode: "out",
             bounce: false,
             attract: {
-              enable: false,
+              enable: true,
               rotateX: 600,
               rotateY: 1200
             }
@@ -80,7 +80,7 @@ const ParticleBackground = () => {
           events: {
             onhover: {
               enable: true,
-              mode: "grab"
+              mode: ["grab", "bubble"]
             },
             onclick: {
               enable: true,
@@ -90,13 +90,20 @@ const ParticleBackground = () => {
           },
           modes: {
             grab: {
-              distance: 140,
+              distance: 200,
               line_linked: {
-                opacity: 0.3
+                opacity: 0.4
               }
             },
+            bubble: {
+              distance: 150,
+              size: 6,
+              duration: 2,
+              opacity: 0.3,
+              speed: 3
+            },
             push: {
-              particles_nb: 4
+              particles_nb: 6
             }
           }
         },
