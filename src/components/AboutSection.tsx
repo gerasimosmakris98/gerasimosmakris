@@ -82,6 +82,30 @@ const AboutSection = () => {
 
       <div className="section-container">
         <motion.div 
+          className="text-center max-w-3xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            className="flex items-center justify-center gap-2 mb-3"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Sparkles className="w-4 h-4 text-highlight-purple" />
+            <span className="uppercase tracking-widest text-gray-400 text-sm font-modern">
+              About Me
+            </span>
+            <Sparkles className="w-4 h-4 text-highlight-blue" />
+          </motion.div>
+          <h2 className="heading-lg mb-6 font-elegant">
+            About <span className="text-gradient-elegant">Me</span>
+          </h2>
+        </motion.div>
+
+        <motion.div 
           className="flex flex-col lg:flex-row gap-16 items-center"
           variants={containerVariants}
           initial="hidden"
@@ -92,89 +116,44 @@ const AboutSection = () => {
             className="lg:w-1/2 flex justify-center"
             variants={imageVariants}
           >
-            <div className="relative w-80 h-80 rounded-3xl overflow-hidden group perspective-1000">
+            <div className="relative w-64 h-64 rounded-3xl overflow-hidden group perspective-1000">
               {/* Glass background layers */}
               <div className="absolute inset-0 glass-panel-strong z-0"></div>
               
               {/* Main image */}
               <img 
-                src="/lovable-uploads/61c2a79f-1047-40f7-8a62-ebd7c7bd7fba.png" 
+                src="/lovable-uploads/4b1ab70d-30fe-467b-8e93-016a47ca07b5.png" 
                 alt="Gerasimos Makris - Professional Web Designer & Social Media Manager"
                 className="object-cover object-center w-full h-full z-20 relative transition-all duration-700 group-hover:scale-105"
               />
               
               {/* Location overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-dark-200/95 via-dark-200/70 to-transparent backdrop-blur-xl z-30">
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-dark-200/95 via-dark-200/70 to-transparent backdrop-blur-xl z-30">
                 <motion.div 
-                  className="flex items-center gap-3 text-gray-100 mb-2"
+                  className="flex items-center gap-2 text-gray-100 mb-1"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  <div className="p-2 rounded-lg glass-panel-strong">
-                    <MapPin size={16} className="text-highlight-blue" />
+                  <div className="p-1.5 rounded-lg glass-panel-strong">
+                    <MapPin size={12} className="text-highlight-blue" />
                   </div>
-                  <span className="font-modern font-medium text-sm">Madrid, Spain</span>
+                  <span className="font-modern font-medium text-xs">Madrid, Spain</span>
                 </motion.div>
                 <motion.p 
-                  className="text-xs text-gray-300 font-modern flex items-center gap-2"
+                  className="text-xs text-gray-300 font-modern flex items-center gap-1"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-highlight-pink"></span>
-                  Originally from Athens, Greece
+                  <span className="w-1 h-1 rounded-full bg-highlight-pink"></span>
+                  <span>Originally from Athens, Greece</span>
                 </motion.p>
               </div>
-              
-              {/* Floating sparkle */}
-              <motion.div
-                className="absolute top-4 right-4 p-2 glass-panel-strong rounded-full"
-                animate={{ 
-                  rotate: [0, 360], 
-                  scale: [1, 1.2, 1],
-                  y: [0, -5, 0]
-                }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <Sparkles size={16} className="text-highlight-yellow" />
-              </motion.div>
             </div>
           </motion.div>
           
           <motion.div className="lg:w-1/2" variants={itemVariants}>
-            <motion.div 
-              className="flex items-center justify-center lg:justify-start gap-4 mb-8"
-              variants={itemVariants}
-            >
-              <motion.div
-                className="flex items-center gap-2"
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              >
-                <Sparkles className="text-highlight-blue" size={20} />
-                <Sparkles className="text-highlight-purple" size={16} />
-                <Sparkles className="text-highlight-pink" size={18} />
-              </motion.div>
-              
-              <motion.h2 
-                className="heading-lg text-center lg:text-left"
-                variants={itemVariants}
-              >
-                About <span className="text-gradient-elegant">Me</span>
-              </motion.h2>
-              
-              <motion.div
-                className="flex items-center gap-2"
-                animate={{ rotate: [360, 0] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              >
-                <Sparkles className="text-highlight-pink" size={18} />
-                <Sparkles className="text-highlight-purple" size={16} />
-                <Sparkles className="text-highlight-blue" size={20} />
-              </motion.div>
-            </motion.div>
-            
             <motion.div 
               className="space-y-6 text-gray-200 mb-10 font-modern leading-relaxed"
               variants={itemVariants}
