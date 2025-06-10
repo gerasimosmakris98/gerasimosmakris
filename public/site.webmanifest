@@ -1,23 +1,27 @@
 
 {
-  "name": "Gerasimos Makris Portfolio",
+  "name": "Gerasimos Makris Portfolio - Web Designer & Social Media Manager",
   "short_name": "GM Portfolio",
-  "description": "Professional web designer and social media manager portfolio",
+  "description": "Professional web designer and social media manager portfolio based in Madrid, Spain",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/lovable-uploads/6bef1e42-b63c-4fd8-9fad-82ad3c970f1b.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
+      "src": "/lovable-uploads/6bef1e42-b63c-4fd8-9fad-82ad3c970f1b.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "theme_color": "#000000",
   "background_color": "#000000",
   "display": "standalone",
   "start_url": "/",
-  "scope": "/"
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "categories": ["business", "portfolio", "design"]
 }

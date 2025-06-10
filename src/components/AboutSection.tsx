@@ -59,12 +59,12 @@ const AboutSection = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.div className="lg:w-1/2" variants={itemVariants}>
-            <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden group">
+            <div className="relative w-full max-w-md mx-auto aspect-[4/5] rounded-2xl overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-highlight-purple/30 via-highlight-blue/20 to-highlight-pink/30 z-0"></div>
               <img 
-                src="/placeholder.svg" 
-                alt="Gerasimos Makris"
-                className="object-cover w-full h-full z-10 mix-blend-luminosity opacity-80 group-hover:opacity-90 transition-opacity duration-500"
+                src="/lovable-uploads/4be2e524-8b85-433f-9e31-b1166bd5f7b8.png" 
+                alt="Gerasimos Makris - Professional Web Designer & Social Media Manager"
+                className="object-cover object-center w-full h-full z-10 mix-blend-luminosity opacity-80 group-hover:opacity-90 transition-opacity duration-500"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-dark-200/90 via-dark-200/50 to-transparent backdrop-blur-sm z-20">
                 <motion.div 
