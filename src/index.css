@@ -45,7 +45,9 @@
 
 @layer components {
   .glass-panel {
-    @apply backdrop-blur-2xl bg-white/8 border border-white/15 rounded-2xl shadow-2xl;
+    @apply backdrop-blur-2xl rounded-2xl shadow-2xl;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 
       0 20px 40px rgba(0, 0, 0, 0.4),
       inset 0 1px 0 rgba(255, 255, 255, 0.15),
@@ -53,7 +55,9 @@
   }
   
   .glass-panel-strong {
-    @apply backdrop-blur-3xl bg-white/12 border border-white/25 rounded-2xl shadow-2xl;
+    @apply backdrop-blur-3xl rounded-2xl shadow-2xl;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 
       0 32px 64px rgba(0, 0, 0, 0.5),
       inset 0 1px 0 rgba(255, 255, 255, 0.25),
@@ -100,23 +104,40 @@
   }
 
   .btn-primary {
-    @apply backdrop-blur-2xl bg-gradient-to-r from-highlight-blue/25 to-highlight-purple/25 
-           border border-white/40 text-white font-semibold px-8 py-4 rounded-2xl 
-           hover:from-highlight-blue/40 hover:to-highlight-purple/40 
-           hover:border-white/60 hover:shadow-2xl hover:shadow-highlight-purple/30
-           transition-all duration-500 hover:scale-105 active:scale-95;
+    @apply backdrop-blur-2xl text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-500 hover:scale-105 active:scale-95;
+    background: linear-gradient(to right, rgba(96, 165, 250, 0.25), rgba(167, 139, 250, 0.25));
+    border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 
       0 8px 32px rgba(0, 0, 0, 0.4),
       inset 0 1px 0 rgba(255, 255, 255, 0.3),
       inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   }
 
+  .btn-primary:hover {
+    background: linear-gradient(to right, rgba(96, 165, 250, 0.4), rgba(167, 139, 250, 0.4));
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      0 0 40px rgba(167, 139, 250, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  }
+
   .btn-secondary {
-    @apply backdrop-blur-2xl bg-white/8 border border-white/25 text-white font-semibold px-8 py-4 rounded-2xl 
-           hover:bg-white/15 hover:border-white/40 hover:shadow-2xl
-           transition-all duration-500 hover:scale-105 active:scale-95;
+    @apply backdrop-blur-2xl text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-500 hover:scale-105 active:scale-95;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 
       0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      0 0 40px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
 
