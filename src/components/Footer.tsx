@@ -40,7 +40,7 @@ const Footer = () => {
     { 
       icon: <Mail className="h-5 w-5" />, 
       label: "Email", 
-      href: "mailto:j.makris98@gmail.com",
+      href: "mailto:contact@gerasimosmakris.com",
       color: "hover:text-highlight-purple"
     }
   ];
