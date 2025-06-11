@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Eye, Clock, Filter } from 'lucide-react';
@@ -86,45 +87,22 @@ const ProjectsSection = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
+        delayChildren: 0.15
       }
     }
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.9 },
+    hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
-      y: 0, 
-      scale: 1,
-      transition: { duration: 0.6, ease: "easeOut" }
+      y: 0,
+      transition: { duration: 0.3 }
     }
   };
 
   return (
     <section id="projects" className="py-24 relative overflow-hidden">
-      {/* Enhanced floating background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-40 right-20 w-72 h-72 rounded-full bg-gradient-to-r from-highlight-purple/5 to-highlight-blue/5 blur-3xl"
-          animate={{ 
-            y: [0, -50, 0], 
-            scale: [1, 1.4, 1],
-            rotate: [0, 90, 180, 270, 360]
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-40 left-20 w-56 h-56 rounded-full bg-gradient-to-r from-highlight-pink/5 to-highlight-purple/5 blur-3xl"
-          animate={{ 
-            y: [0, 40, 0], 
-            x: [0, 25, 0],
-            scale: [1, 0.7, 1]
-          }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-        />
-      </div>
-
       <div className="section-container">
         <SectionHeader
           subtitle="Portfolio"
@@ -137,7 +115,7 @@ const ProjectsSection = () => {
           className="flex justify-center mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <div className="glass-panel-strong p-2 rounded-2xl">
@@ -179,27 +157,25 @@ const ProjectsSection = () => {
               <motion.div
                 key={`${project.id}-${filter}`}
                 variants={cardVariants}
-                className="group relative overflow-hidden rounded-2xl glass-panel-strong hover:scale-[1.02] transition-all duration-500"
-                whileHover={{ y: -10 }}
+                className="group relative overflow-hidden rounded-2xl glass-panel-strong hover:scale-[1.02] transition-all duration-300"
+                whileHover={{ y: -5 }}
               >
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 filter brightness-40 group-hover:brightness-30"
+                    className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110 filter brightness-40 group-hover:brightness-30"
                   />
                   
-                  {/* Enhanced glass overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-200/80 via-dark-200/20 to-transparent" />
                   
-                  {/* Coming soon indicator */}
                   <motion.div 
                     className="absolute inset-0 flex items-center justify-center"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    <div className="glass-panel-strong p-6 rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:bg-white/20">
+                    <div className="glass-panel-strong p-6 rounded-2xl transform transition-all duration-300 group-hover:scale-110 group-hover:bg-white/20">
                       <motion.div
                         animate={{ rotate: [0, 360] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -212,8 +188,7 @@ const ProjectsSection = () => {
                   </motion.div>
                 </div>
                 
-                {/* Project info overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-200 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-200 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                   <div className="w-full">
                     <h3 className="text-xl font-semibold mb-2 text-white font-modern">{project.title}</h3>
                     <p className="text-gray-300 text-sm mb-4 font-modern">
@@ -289,5 +264,3 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
-
-}

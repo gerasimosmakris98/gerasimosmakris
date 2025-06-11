@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -20,21 +21,12 @@ const AboutSection = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6 }
+      transition: { duration: 0.3 }
     }
   };
 
   return (
     <section id="about" className="relative py-24 overflow-hidden">
-      {/* Minimal background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          className="absolute top-20 right-10 w-28 h-28 rounded-full bg-gradient-to-br from-highlight-purple/4 to-highlight-blue/4 blur-3xl"
-          animate={{ y: [0, -12, 0], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
-
       <div className="section-container">
         <SectionHeader
           subtitle="About Me"
@@ -56,7 +48,7 @@ const AboutSection = () => {
               
               <img 
                 alt="Gerasimos Makris - Professional Web Designer & Social Media Manager" 
-                className="object-cover object-center w-full h-full z-20 relative transition-all duration-500 group-hover:scale-105" 
+                className="object-cover object-center w-full h-full z-20 relative transition-all duration-300 group-hover:scale-105" 
                 src="/lovable-uploads/4b1ab70d-30fe-467b-8e93-016a47ca07b5.png" 
               />
               
@@ -65,7 +57,7 @@ const AboutSection = () => {
                   className="flex items-center gap-2 text-gray-100 mb-1"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
+                  transition={{ duration: 0.3, delay: 0.3 }}
                 >
                   <div className="p-1 rounded-lg glass-panel">
                     <MapPin size={10} className="text-highlight-blue" />
@@ -76,7 +68,7 @@ const AboutSection = () => {
                   className="text-xs text-gray-300 font-modern flex items-center gap-1"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
+                  transition={{ duration: 0.3, delay: 0.4 }}
                 >
                   <span className="w-1 h-1 rounded-full bg-highlight-pink"></span>
                   <span>Originally from Athens, Greece</span>

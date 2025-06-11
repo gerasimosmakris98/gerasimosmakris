@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -57,7 +58,7 @@ const ServicesSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
+        staggerChildren: 0.1,
         delayChildren: 0.15
       }
     }
@@ -68,26 +69,17 @@ const ServicesSection = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.3 }
     }
   };
 
   return (
     <section id="services" className="py-24 relative overflow-hidden">
-      {/* Minimal background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-20 left-1/4 w-48 h-48 rounded-full bg-gradient-to-r from-highlight-blue/6 to-highlight-purple/6 blur-3xl"
-          animate={{ y: [0, -20, 0], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
-
       <div className="section-container">
         <SectionHeader
           subtitle="My Services"
-          title="What I"
-          highlightedWord="Offer"
+          title="My"
+          highlightedWord="Services"
           description="Specialized services in web design and social media management to help your brand grow and connect with your audience."
         />
 
@@ -137,7 +129,7 @@ const ServicesSection = () => {
           className="mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.3, delay: 0.4 }}
           viewport={{ once: true }}
         >
           <motion.button

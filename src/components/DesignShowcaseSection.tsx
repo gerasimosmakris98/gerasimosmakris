@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
@@ -71,7 +72,7 @@ const DesignShowcaseSection = () => {
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-4 py-2 rounded-full transition-all ${
+              className={`px-4 py-2 rounded-full transition-all duration-300 ${
                 activeCategory === category.id
                   ? "bg-highlight-purple text-white"
                   : "bg-dark-100 text-gray-400 hover:bg-dark-300"
@@ -88,7 +89,7 @@ const DesignShowcaseSection = () => {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="glass-panel overflow-hidden group"
             >
@@ -96,7 +97,7 @@ const DesignShowcaseSection = () => {
                 <img 
                   src={work.image} 
                   alt={work.title}
-                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">

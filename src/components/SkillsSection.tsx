@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Palette, MessageSquare, Laptop, Smartphone } from 'lucide-react';
@@ -42,7 +43,7 @@ const SkillsSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
+        staggerChildren: 0.1,
         delayChildren: 0.15
       }
     }
@@ -53,26 +54,17 @@ const SkillsSection = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.3 }
     }
   };
 
   return (
     <section id="skills" className="py-24 relative overflow-hidden">
-      {/* Minimal floating background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute bottom-32 right-20 w-40 h-40 rounded-full bg-gradient-to-r from-highlight-purple/6 to-highlight-pink/6 blur-3xl"
-          animate={{ y: [0, 15, 0], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
-
       <div className="section-container">
         <SectionHeader
           subtitle="My Skills"
-          title="Services I"
-          highlightedWord="Offer"
+          title="My"
+          highlightedWord="Skills"
           description="I combine technical expertise with creative vision to deliver exceptional digital experiences and social media strategies."
         />
         
@@ -108,7 +100,7 @@ const SkillsSection = () => {
           className="mt-16 flex flex-wrap justify-center gap-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
           viewport={{ once: true }}
         >
           {["HTML5", "CSS3", "JavaScript", "React", "Figma", "Photoshop", "Tailwind", "WordPress", "Social Media Management", "Content Strategy"].map((tech, index) => (

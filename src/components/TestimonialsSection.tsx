@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Quote, Star, Plus } from 'lucide-react';
@@ -21,7 +22,7 @@ const TestimonialsSection = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
             className="glass-panel-strong p-12 text-center max-w-2xl"
           >
@@ -57,11 +58,10 @@ const TestimonialsSection = () => {
             </div>
           </motion.div>
 
-          {/* Future testimonials will appear here */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
             viewport={{ once: true }}
             className="mt-12 text-center"
           >
