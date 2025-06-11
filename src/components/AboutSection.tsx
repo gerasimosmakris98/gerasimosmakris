@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SectionHeader from './SectionHeader';
 
@@ -49,31 +48,8 @@ const AboutSection = () => {
               <img 
                 alt="Gerasimos Makris - Professional Web Designer & Social Media Manager" 
                 className="object-cover object-center w-full h-full z-20 relative transition-all duration-300 group-hover:scale-105" 
-                src="/lovable-uploads/4b1ab70d-30fe-467b-8e93-016a47ca07b5.png" 
+                src="/lovable-uploads/31f2ceb1-de43-4fa1-965a-0cb973c038b9.png" 
               />
-              
-              <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-dark-200/90 to-transparent backdrop-blur-lg z-30">
-                <motion.div 
-                  className="flex items-center gap-2 text-gray-100 mb-1"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: 0.3 }}
-                >
-                  <div className="p-1 rounded-lg glass-panel">
-                    <MapPin size={10} className="text-highlight-blue" />
-                  </div>
-                  <span className="font-modern font-medium text-xs">Madrid, Spain</span>
-                </motion.div>
-                <motion.p 
-                  className="text-xs text-gray-300 font-modern flex items-center gap-1"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: 0.4 }}
-                >
-                  <span className="w-1 h-1 rounded-full bg-highlight-pink"></span>
-                  <span>Originally from Athens, Greece</span>
-                </motion.p>
-              </div>
             </div>
           </motion.div>
           

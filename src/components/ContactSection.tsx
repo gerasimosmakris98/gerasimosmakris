@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, Instagram, Github, Twitter, Facebook } from 'lucide-react';
-import ContactForm from './ContactForm';
+import { Mail, Phone, MapPin, Linkedin, Instagram, Github, Twitter, Facebook, Clock } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const ContactSection = () => {
   const socialLinks = [
@@ -22,54 +22,52 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-24">
       <div className="section-container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.span 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="uppercase tracking-widest text-gray-400 text-sm mb-3 block font-modern"
-          >
-            Get In Touch
-          </motion.span>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="heading-lg mb-6"
-          >
-            Let's Create Something <span className="text-gradient">Amazing</span> Together
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-gray-300 leading-relaxed"
-          >
-            Ready to elevate your web presence and social media strategy? Let's discuss how we can work together to achieve your goals.
-          </motion.p>
-        </div>
+        <SectionHeader
+          subtitle="Get In Touch"
+          title="Contact"
+          highlightedWord="Me"
+          description="Ready to elevate your web presence and social media strategy? Let's discuss how we can work together to achieve your goals."
+        />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Form */}
+          {/* Coming Soon Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
             className="glass-panel-strong p-8 lg:p-10"
           >
             <h3 className="heading-md mb-8 text-center">Send Me a Message</h3>
-            <ContactForm />
+            
+            {/* Coming Soon Message */}
+            <motion.div 
+              className="aspect-[4/3] flex items-center justify-center relative"
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="glass-panel-strong p-8 rounded-2xl transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-center">
+                <motion.div
+                  animate={{ rotate: [0, 360] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                >
+                  <Clock className="w-16 h-16 text-highlight-purple mx-auto mb-4" />
+                </motion.div>
+                <p className="text-white font-bold text-2xl mb-3 font-elegant">Coming Soon</p>
+                <p className="text-gray-300 text-sm font-modern">
+                  Direct messaging feature is currently in development. For now, please use the contact information to reach out directly.
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
 
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             viewport={{ once: true }}
             className="space-y-8"
           >
@@ -132,7 +130,7 @@ const ContactSection = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
               viewport={{ once: true }}
               className="glass-panel p-6 text-center"
             >
