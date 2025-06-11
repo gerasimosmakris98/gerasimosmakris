@@ -18,61 +18,56 @@ const ParticleBackground = () => {
           enable: true,
           zIndex: -1
         },
-        fpsLimit: 120,
+        fpsLimit: 60,
         particles: {
           number: {
-            value: 120,
+            value: 35,
             density: {
               enable: true,
-              value_area: 1000
+              value_area: 1200
             }
           },
           color: {
-            value: ["#60A5FA", "#A78BFA", "#F472B6", "#FCD34D"]
+            value: ["#60A5FA", "#A78BFA"]
           },
           shape: {
             type: "circle",
           },
           opacity: {
-            value: 0.15,
+            value: 0.08,
             random: true,
             anim: {
               enable: true,
-              speed: 2,
-              opacity_min: 0.05,
+              speed: 1,
+              opacity_min: 0.02,
               sync: false
             }
           },
           size: {
-            value: 3,
+            value: 2,
             random: true,
             anim: {
               enable: true,
-              speed: 2,
-              size_min: 0.5,
+              speed: 1,
+              size_min: 0.3,
               sync: false
             }
           },
           line_linked: {
             enable: true,
-            distance: 180,
+            distance: 150,
             color: "#ffffff",
-            opacity: 0.15,
-            width: 1.5
+            opacity: 0.08,
+            width: 1
           },
           move: {
             enable: true,
-            speed: 0.8,
+            speed: 0.5,
             direction: "none",
             random: true,
             straight: false,
             out_mode: "out",
-            bounce: false,
-            attract: {
-              enable: true,
-              rotateX: 600,
-              rotateY: 1200
-            }
+            bounce: false
           }
         },
         interactivity: {
@@ -80,40 +75,22 @@ const ParticleBackground = () => {
           events: {
             onhover: {
               enable: true,
-              mode: ["grab", "bubble"]
-            },
-            onclick: {
-              enable: true,
-              mode: "push"
+              mode: "grab"
             },
             resize: true
           },
           modes: {
             grab: {
-              distance: 200,
+              distance: 120,
               line_linked: {
-                opacity: 0.4
+                opacity: 0.15
               }
-            },
-            bubble: {
-              distance: 150,
-              size: 6,
-              duration: 2,
-              opacity: 0.3,
-              speed: 3
-            },
-            push: {
-              particles_nb: 6
             }
           }
         },
         retina_detect: true,
         background: {
-          color: "transparent",
-          image: "",
-          position: "50% 50%",
-          repeat: "no-repeat",
-          size: "cover"
+          color: "transparent"
         }
       }}
     />
