@@ -25,13 +25,13 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="relative py-24 bg-gradient-to-b from-dark-200 via-dark-100 to-dark-200 overflow-hidden">
+    <section id="about" className="relative py-24 overflow-hidden">
       {/* Minimal background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 
-          className="absolute top-20 right-10 w-32 h-32 rounded-full bg-gradient-to-br from-highlight-purple/8 to-highlight-blue/8 blur-3xl"
-          animate={{ y: [0, -15, 0], opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-20 right-10 w-28 h-28 rounded-full bg-gradient-to-br from-highlight-purple/4 to-highlight-blue/4 blur-3xl"
+          animate={{ y: [0, -12, 0], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 

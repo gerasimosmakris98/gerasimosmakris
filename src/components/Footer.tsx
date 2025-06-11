@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Instagram, Github, Twitter, Facebook, Mail, Heart, Sparkles } from 'lucide-react';
@@ -66,25 +65,25 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-dark-300 relative overflow-hidden">
-      {/* Floating background elements */}
+    <footer className="relative overflow-hidden">
+      {/* Reduced floating background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-10 left-1/4 w-40 h-40 rounded-full bg-gradient-to-r from-highlight-blue/5 to-highlight-purple/5 blur-3xl"
+          className="absolute top-10 left-1/4 w-32 h-32 rounded-full bg-gradient-to-r from-highlight-blue/3 to-highlight-purple/3 blur-3xl"
           animate={{ 
-            y: [0, -20, 0], 
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360]
+            y: [0, -15, 0], 
+            scale: [1, 1.1, 1],
+            rotate: [0, 90, 180]
           }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-10 right-1/4 w-32 h-32 rounded-full bg-gradient-to-r from-highlight-purple/5 to-highlight-pink/5 blur-3xl"
+          className="absolute bottom-10 right-1/4 w-24 h-24 rounded-full bg-gradient-to-r from-highlight-purple/3 to-highlight-pink/3 blur-3xl"
           animate={{ 
-            y: [0, 15, 0], 
-            x: [0, -10, 0]
+            y: [0, 10, 0], 
+            x: [0, -8, 0]
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 3 }}
         />
       </div>
 

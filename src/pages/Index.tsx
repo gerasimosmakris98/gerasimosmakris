@@ -11,6 +11,7 @@ import ProjectsSection from '@/components/ProjectsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import ParticleBackground from '@/components/ParticleBackground';
+import UnifiedBackground from '@/components/UnifiedBackground';
 
 const Index = () => {
   useEffect(() => {
@@ -145,7 +146,8 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="min-h-screen bg-dark-200 text-white overflow-x-hidden">
+    <div className="min-h-screen text-white overflow-x-hidden relative">
+      <UnifiedBackground />
       <ParticleBackground />
       <Navbar />
       <HeroSection />

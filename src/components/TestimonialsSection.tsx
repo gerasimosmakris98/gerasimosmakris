@@ -8,7 +8,7 @@ const TestimonialsSection = () => {
   const [showAddReview, setShowAddReview] = useState(false);
 
   return (
-    <section id="testimonials" className="py-24 bg-dark-300">
+    <section id="testimonials" className="py-24">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.span 
