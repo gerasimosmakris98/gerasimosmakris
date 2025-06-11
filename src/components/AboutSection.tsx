@@ -1,7 +1,7 @@
-
 import React from 'react';
-import { MapPin, Sparkles } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
+import SectionHeader from './SectionHeader';
 
 const AboutSection = () => {
   const containerVariants = {
@@ -36,29 +36,12 @@ const AboutSection = () => {
       </div>
 
       <div className="section-container">
-        <motion.div 
-          className="text-center max-w-3xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <motion.div
-            className="flex items-center justify-center gap-2 mb-3"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-          >
-            <Sparkles className="w-4 h-4 text-highlight-purple" />
-            <span className="uppercase tracking-widest text-gray-400 text-sm font-modern">
-              About Me
-            </span>
-            <Sparkles className="w-4 h-4 text-highlight-blue" />
-          </motion.div>
-          <h2 className="heading-lg mb-6 font-elegant">
-            About <span className="text-gradient-elegant">Me</span>
-          </h2>
-        </motion.div>
+        <SectionHeader
+          subtitle="About Me"
+          title="About"
+          highlightedWord="Me"
+          description="I'm a passionate web designer and social media manager with a keen eye for modern aesthetics and engaging digital experiences."
+        />
 
         <motion.div 
           className="flex flex-col lg:flex-row gap-16 items-center"

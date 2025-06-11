@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const designCategories = [
   { name: "All", id: "all" },
@@ -57,19 +57,14 @@ const DesignShowcaseSection = () => {
     : designWorks.filter(work => work.category === activeCategory);
 
   return (
-    <section id="design-showcase" className="py-24 bg-dark-200">
+    <section id="design-showcase" className="py-24">
       <div className="section-container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="uppercase tracking-widest text-gray-400 text-sm mb-3 block">
-            Portfolio
-          </span>
-          <h2 className="heading-lg mb-6">
-            Design <span className="text-gradient">Showcase</span>
-          </h2>
-          <p className="text-gray-300">
-            A preview of my design work for web and social media projects. Each project is coming soon with comprehensive case studies.
-          </p>
-        </div>
+        <SectionHeader
+          subtitle="Portfolio"
+          title="Design"
+          highlightedWord="Showcase"
+          description="A preview of my design work for web and social media projects. Each project is coming soon with comprehensive case studies."
+        />
 
         <div className="flex justify-center space-x-4 mb-12">
           {designCategories.map((category) => (

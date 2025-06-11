@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Eye, Clock, Sparkles, Filter } from 'lucide-react';
+import { Eye, Clock, Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
+import SectionHeader from './SectionHeader';
 
 type Project = {
   id: number;
@@ -102,7 +102,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-24 bg-dark-100 relative overflow-hidden">
+    <section id="projects" className="py-24 relative overflow-hidden">
       {/* Enhanced floating background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -126,32 +126,12 @@ const ProjectsSection = () => {
       </div>
 
       <div className="section-container">
-        <motion.div 
-          className="text-center max-w-3xl mx-auto mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <motion.div
-            className="flex items-center justify-center gap-2 mb-3"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Sparkles className="w-4 h-4 text-highlight-purple animate-pulse" />
-            <span className="uppercase tracking-widest text-gray-400 text-sm font-modern">
-              Portfolio
-            </span>
-            <Sparkles className="w-4 h-4 text-highlight-blue animate-pulse" />
-          </motion.div>
-          <h2 className="heading-lg mb-6 font-elegant">
-            Featured <span className="text-gradient-elegant">Projects</span>
-          </h2>
-          <p className="text-gray-200 font-modern leading-relaxed">
-            Explore my upcoming work across web design, social media campaigns, and brand development.
-          </p>
-        </motion.div>
+        <SectionHeader
+          subtitle="Portfolio"
+          title="My"
+          highlightedWord="Projects"
+          description="Explore my upcoming work across web design, social media campaigns, and brand development."
+        />
         
         <motion.div 
           className="flex justify-center mb-10"
@@ -309,3 +289,5 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
+
+}

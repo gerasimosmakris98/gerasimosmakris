@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Quote, Star, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import SectionHeader from './SectionHeader';
 
 const TestimonialsSection = () => {
   const [showAddReview, setShowAddReview] = useState(false);
@@ -10,35 +10,12 @@ const TestimonialsSection = () => {
   return (
     <section id="testimonials" className="py-24">
       <div className="section-container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.span 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="uppercase tracking-widest text-gray-400 text-sm mb-3 block font-modern"
-          >
-            Client Feedback
-          </motion.span>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="heading-lg mb-6"
-          >
-            What My <span className="text-gradient">Clients</span> Say
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-gray-300"
-          >
-            Building trust through exceptional work and client satisfaction.
-          </motion.p>
-        </div>
+        <SectionHeader
+          subtitle="Client Feedback"
+          title="Client"
+          highlightedWord="Testimonials"
+          description="Building trust through exceptional work and client satisfaction."
+        />
         
         <div className="flex flex-col items-center justify-center min-h-[400px]">
           <motion.div

@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Palette, MessageSquare, Laptop, Smartphone, Sparkles } from 'lucide-react';
+import { Code, Palette, MessageSquare, Laptop, Smartphone } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const SkillsSection = () => {
   const skills = [
@@ -69,32 +69,12 @@ const SkillsSection = () => {
       </div>
 
       <div className="section-container">
-        <motion.div 
-          className="text-center max-w-3xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <motion.div
-            className="flex items-center justify-center gap-2 mb-3"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-          >
-            <Sparkles className="w-4 h-4 text-highlight-purple" />
-            <span className="uppercase tracking-widest text-gray-400 text-sm font-modern">
-              My Skills
-            </span>
-            <Sparkles className="w-4 h-4 text-highlight-blue" />
-          </motion.div>
-          <h2 className="heading-lg mb-6 font-elegant">
-            Services I <span className="text-gradient-elegant">Offer</span>
-          </h2>
-          <p className="text-gray-200 font-modern leading-relaxed">
-            I combine technical expertise with creative vision to deliver exceptional digital experiences and social media strategies.
-          </p>
-        </motion.div>
+        <SectionHeader
+          subtitle="My Skills"
+          title="Services I"
+          highlightedWord="Offer"
+          description="I combine technical expertise with creative vision to deliver exceptional digital experiences and social media strategies."
+        />
         
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
